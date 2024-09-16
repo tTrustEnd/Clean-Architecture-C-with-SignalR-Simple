@@ -2,8 +2,6 @@
 
 using System.Diagnostics;
 using CleanArchitectureSignalR.Core.Entities;
-using CleanArchitectureSignalR.Core.UseCases.GetMessageUseCase;
-using CleanArchitectureSignalR.Core.UseCases.SendMessageUseCase;
 using CleanArchitectureSignalR.Core.UseCases.Services;
 
 namespace CleanArchitectureSignalR.Presentation.Hubs;
