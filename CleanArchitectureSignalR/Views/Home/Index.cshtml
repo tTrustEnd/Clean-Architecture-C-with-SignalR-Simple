@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.9/signalr.min.js"></script>
+<script type="text/javascript">
+    const connection = new signalR.HubConnectionBuilder()
+        .withUrl("/chatHub")
+        .build();
+
+    connection.on("ReceiveMessage", function (user, message) {
+        console.log(`${user}: ${message}`);
+    });
+
+    connection.start().then(function () {
+        console.log("Connected to chatHub");
+    });
+
+    function sendMessage(user, message) {
+        console.log("HELLO")
+        connection.invoke("SendMessage","TruongSend","HELLOWORLD")
+            .catch(function (err) {
+                return console.error(err.toString());
+            });
+    }
+         function sendMessage2(user, message) {
+            console.log("HELLO")
+            connection.invoke("SendMessage","TruongSend2","HELLOWORLD2")
+                .catch(function (err) {
+                        return console.error(err.toString());
+                });
+        }
+        function getMessage(user, message) {
+            console.log("GetMessage")
+            connection.invoke("GetMessages")
+                .catch(function (err) {
+                        return console.error(err.toString());
+                });
+        }
+</script>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <button onclick="sendMessage()">sendMessage</button>
+    <button onclick="getMessage()">getMessage</button>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
