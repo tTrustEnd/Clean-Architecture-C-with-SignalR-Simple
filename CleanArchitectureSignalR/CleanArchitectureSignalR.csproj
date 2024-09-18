@@ -7,10 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Core\Interface\**" />
+    <Content Remove="Core\Interface\**" />
+    <EmbeddedResource Remove="Core\Interface\**" />
+    <None Remove="Core\Interface\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Application\" />
-    <Folder Include="Core\Interface\" />
     <Folder Include="Infrastructure\SpLite\DataContext\" />
-    <Folder Include="Infrastructure\SpLite\Repositories\" />
+    <Folder Include="Presentation\Hubs\" />
   </ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.0" />

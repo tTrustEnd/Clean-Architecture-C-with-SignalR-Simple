@@ -19,7 +19,17 @@ public class MessageRepository : IMessageRepository
     }
     public async Task<IEnumerable<Message>> GetMessagesAsync()
     {
-        return await _dbContext.Messages.ToListAsync();
+        try
+        {
+            return await _dbContext.Messages.Include(m => m.User)
+                                            .Include(m => m.Group)
+                                            .ToListAsync();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+            throw;
+        }
     }
    
 }

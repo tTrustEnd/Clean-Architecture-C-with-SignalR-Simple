@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ADMIN\\source\\repos\\CleanArchitectureSignalR\\CleanArchitectureSignalR\\CleanArchitectureSignalR.csproj": {}
+    "C:\\Users\\ADMIN\\source\\repos\\Clean-Architecture-C-with-SignalR-Simple\\CleanArchitectureSignalR\\CleanArchitectureSignalR.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ADMIN\\source\\repos\\CleanArchitectureSignalR\\CleanArchitectureSignalR\\CleanArchitectureSignalR.csproj": {
+    "C:\\Users\\ADMIN\\source\\repos\\Clean-Architecture-C-with-SignalR-Simple\\CleanArchitectureSignalR\\CleanArchitectureSignalR.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ADMIN\\source\\repos\\CleanArchitectureSignalR\\CleanArchitectureSignalR\\CleanArchitectureSignalR.csproj",
+        "projectUniqueName": "C:\\Users\\ADMIN\\source\\repos\\Clean-Architecture-C-with-SignalR-Simple\\CleanArchitectureSignalR\\CleanArchitectureSignalR.csproj",
         "projectName": "CleanArchitectureSignalR",
-        "projectPath": "C:\\Users\\ADMIN\\source\\repos\\CleanArchitectureSignalR\\CleanArchitectureSignalR\\CleanArchitectureSignalR.csproj",
+        "projectPath": "C:\\Users\\ADMIN\\source\\repos\\Clean-Architecture-C-with-SignalR-Simple\\CleanArchitectureSignalR\\CleanArchitectureSignalR.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ADMIN\\source\\repos\\CleanArchitectureSignalR\\CleanArchitectureSignalR\\obj\\",
+        "outputPath": "C:\\Users\\ADMIN\\source\\repos\\Clean-Architecture-C-with-SignalR-Simple\\CleanArchitectureSignalR\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

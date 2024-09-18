@@ -1,5 +1,8 @@
-﻿using CleanArchitectureSignalR.Core.Entities;
+﻿using System.Text.Json;
+using CleanArchitectureSignalR.Core.Entities;
+using CleanArchitectureSignalR.Core.UseCases._Repositories;
 using CleanArchitectureSignalR.Core.UseCases.GetMessageUseCase;
+using CleanArchitectureSignalR.Core.UseCases.GetOnlineGroupMemberUseCase;
 using CleanArchitectureSignalR.Core.UseCases.Repositories;
 using CleanArchitectureSignalR.Core.UseCases.SendMessageUseCase;
 using CleanArchitectureSignalR.Core.UseCases.Services;
@@ -19,13 +22,23 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite("Filename=splitedb1")); // Sửa tên file phù hợp
 builder.Services.AddTransient<ISendMessageUseCase, SendMessageUseCase>();
 builder.Services.AddTransient<IGetMessageUseCase, GetMessageUseCase>();
+builder.Services.AddTransient<IGetOnlineGroupMemberUseCase, GetOnlineGroupMemberUseCase>();
 
 builder.Services.AddTransient<IMessageRepository, MessageRepository>();
+builder.Services.AddTransient<IGroupMembersRepository, GroupMemberRepository>();
+
 builder.Services.AddTransient<IMessageService>(services => new MessageService(
     services.GetRequiredService<ISendMessageUseCase>(),
     services.GetRequiredService<IGetMessageUseCase>()));
 
+var options = new JsonSerializerOptions
+{
+    ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve,
+    WriteIndented = true // Tùy chọn để làm cho JSON dễ đọc hơn
+};
 
+// Serialize đối tượng với cấu hình này
+var json = JsonSerializer.Serialize(options);
 
 var app = builder.Build();
 

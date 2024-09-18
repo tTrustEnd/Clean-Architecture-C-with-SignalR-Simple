@@ -22,16 +22,23 @@
                 return console.error(err.toString());
             });
     }
-         function sendMessage2(user, message) {
+         function sendMessage2() {
             console.log("HELLO")
             connection.invoke("SendMessage","TruongSend2","HELLOWORLD2")
                 .catch(function (err) {
                         return console.error(err.toString());
                 });
         }
-        function getMessage(user, message) {
+        function getMessage() {
             console.log("GetMessage")
             connection.invoke("GetMessages")
+                .catch(function (err) {
+                        return console.error(err.toString());
+                });
+        }
+    function GetOnlineGroupMembers() {
+            console.log("GetOnlineGroupMembers")
+            connection.invoke("GetOnlineGroupMembers",1)
                 .catch(function (err) {
                         return console.error(err.toString());
                 });
@@ -42,5 +49,6 @@
     <h1 class="display-4">Welcome</h1>
     <button onclick="sendMessage()">sendMessage</button>
     <button onclick="getMessage()">getMessage</button>
+    <button onclick="GetOnlineGroupMembers()">getGroupMembersOnline</button>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>

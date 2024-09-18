@@ -15,9 +15,9 @@ public class SendMessageUseCase : ISendMessageUseCase
     {
         var newMessage = new Message
         {
-            id = Guid.NewGuid().ToString(),
-            User = user,
-            Text = message,
+            UserID = 1,
+            GroupID = 1,
+            Content = message,
             SendAt = DateTime.Now,
         };
         await _messageRepository.SaveMessageAsync(newMessage);
